@@ -1,0 +1,73 @@
+footer {
+
+  .textwidget {
+
+    strong {
+      color: #5b9bcd;
+      font-weight: 700;
+    }
+  }
+
+  .btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 0.75rem !important;
+    letter-spacing: 0.05em;
+    
+    .shop-btns & {
+      background: rgba(175, 211, 240, 0.3);
+    }
+  }
+  
+  .promotions {
+    
+    .promo-title a {
+      color: #5b9bcd;
+      
+      &:hover {
+        color: #5b9bcd;
+      }  
+    }
+  }
+}
+
+.footer-links {
+  
+  .nav-link {
+    color: #fff;
+    transition: 0.2s ease all; 
+      
+      &:hover {
+        color: darken(#fff, 20%);
+      }
+  }
+}
+.copyright {
+  background-color: $dark-blue;
+  
+  .social {
+    aspect-ratio: 1 / 1;
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    text-align: center;
+    transition: 0.2s ease all; 
+    
+    &.twitter {
+      background-color: #4786c6;
+      
+      &:hover {
+        background-color: darken(#4786c6, 10%);
+      }
+    }
+    
+    &.facebook {
+      background-color: #395b99; 
+      
+      &:hover {
+        background-color: darken(#395b99, 10%);
+      }
+
+    }
+  }
+} 

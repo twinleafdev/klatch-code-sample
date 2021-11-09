@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+
+//font-family: 'Oxygen', sans-serif;
+
+.main {
+  padding-bottom: 50px;
+}
+
+.wp-block-image img {
+    height: auto;
+}
+
+.heading {
+	color: var(--primary);
+	font-weight: 700;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid var(--primary);
+	line-height: .1rem;
+	padding-top: 0.5em;
+	text-align: center;
+	
+	span {
+		background: #fff;
+		padding: 0 1rem;
+	}
+}
+
+.text-shadow {
+	text-shadow: 2px 2px 9px #1f1f1f;
+}
+
+.has-blue-color {
+  color: var(--primary);
+}
+
+.has-gray-color {
+  color: var(--gray);
+}
+
+.has-light-color {
+  color: var(--light);  
+}
+
+.has-blue-background-color {
+  background-color: var(--primary);
+}
+
+.has-gray-background-color {
+  background-color: var(--gray);
+}
+
+.has-light-background-color {
+  background-color: var(--light);
+}
+
+.fa-check {
+  color: var(--primary);
+  margin-right: .5rem;
+}

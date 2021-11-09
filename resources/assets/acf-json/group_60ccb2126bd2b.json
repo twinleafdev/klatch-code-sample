@@ -1,0 +1,443 @@
+{
+    "key": "group_60ccb2126bd2b",
+    "title": "Analyzers",
+    "fields": [
+        {
+            "key": "field_60f73f292edfe",
+            "label": "Status",
+            "name": "status",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_60e5d4e17cdc7",
+                    "label": "Active\/ Discontinued",
+                    "name": "active_discontinued",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "active_products",
+                    "field_type": "radio",
+                    "allow_null": 0,
+                    "add_term": 1,
+                    "save_terms": 1,
+                    "load_terms": 1,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_60f732000f8f3",
+                    "label": "Display Order",
+                    "name": "order",
+                    "type": "number",
+                    "instructions": "Order Analyzer appears in sort.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_60e4c97e334bc",
+            "label": "Analyzer Title",
+            "name": "analyzer_title",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_60e4c98d334bd",
+                    "label": "Model Number",
+                    "name": "model_number",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "0000",
+                    "prepend": "Model",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_60e4c9b4334be",
+                    "label": "Model Name",
+                    "name": "model_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Dissolved Oxygen",
+                    "prepend": "",
+                    "append": "Analyzer",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_60d61dee57878",
+            "label": "Analyzer Type",
+            "name": "analyzer_type",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_60ccd21e55d72",
+                    "label": "Parameter",
+                    "name": "parameter",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Ammonia": "Ammonia",
+                        "Chlorine, free": "Chlorine, free",
+                        "Conductivity, Degas Cation": "Conductivity, Degas Cation",
+                        "Conductivity, Multicon & pH": "Conductivity, Multicon & pH",
+                        "Copper, dissolved": "Copper, dissolved",
+                        "Disinfectants\/Monochloramine": "Disinfectants\/Monochloramine",
+                        "Ethylene\/Propylene Glycol": "Ethylene\/Propylene Glycol",
+                        "Filming Amines": "Filming Amines",
+                        "Hardness, Calcium": "Hardness, Calcium",
+                        "Hardness, total": "Hardness, total",
+                        "Hydrazine": "Hydrazine",
+                        "Hydrogen, dissolved": "Hydrogen, dissolved",
+                        "Iron, dissolved": "Iron, dissolved",
+                        "Oil in Water": "Oil in Water",
+                        "Oxygen, dissolved (LDO)": "Oxygen, dissolved (LDO)",
+                        "Phosphate": "Phosphate",
+                        "Silica": "Silica",
+                        "Sodium": "Sodium",
+                        "Sample": "Sample"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_60ccd30a55d73",
+                    "label": "Technology",
+                    "name": "technology",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Colorimetric": "Colorimetric",
+                        "Cationic Exchange": "Cationic Exchange",
+                        "Cationic Exchange \/ Dynamic Degassing": "Cationic Exchange \/ Dynamic Degassing",
+                        "Ion Selective": "Ion Selective",
+                        "Luminescent\/Optical": "Luminescent\/Optical",
+                        "Nephelometric": "Nephelometric",
+                        "Potentiostatic": "Potentiostatic",
+                        "Titrimetric": "Titrimetric",
+                        "Sample": "Sample"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_60ccc5d4be915",
+            "label": "Range(s)",
+            "name": "models",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Range",
+            "sub_fields": [
+                {
+                    "key": "field_60ccc695be917",
+                    "label": "Range",
+                    "name": "range",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "ex. 0 – 500ppb",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_60ccc80ff6710",
+            "label": "Analyzer Overview",
+            "name": "overview",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_60ccd0eb55d6f",
+            "label": "Features",
+            "name": "features",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_60ccd11655d70",
+            "label": "Specifications",
+            "name": "specifications",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_60ccc882f6712",
+            "label": "Support",
+            "name": "support",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_60ccc8a7f6713",
+                    "label": "Manual upload",
+                    "name": "manual",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_60ccc8e3f6714",
+                    "label": "Manual Section",
+                    "name": "manual_section",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_60ccc9a0f6716",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "ex. Parts",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60ccc979f6715",
+                            "label": "Page #",
+                            "name": "page_number",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_60ccc849f6711",
+                    "label": "Product Sheet",
+                    "name": "brochure",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "analyzers"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1632157144
+}

@@ -1,0 +1,158 @@
+.sidebar-primary {
+  
+  .content {
+    @extend .row; 
+  }
+  
+  .main {
+    @extend .col-md-8;
+  }
+  
+  .sidebar {
+    @extend .col-md-4;
+  }
+}
+
+.jumbo-bg-wrap, .full-width {
+  position: relative;
+  
+  div {
+    z-index: 1;
+    position: relative;  
+  }
+  
+  .jumbo-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+}
+  
+.full-width {
+  margin-left: -15px;
+  margin-right: -15px;
+  
+  &.jumbotron {
+    margin-top: 0;
+    margin-bottom: 4rem;
+  
+/*
+		&.video-bg {
+			padding-bottom: 32%;
+		}
+*/
+  }
+  
+  .block-editor-block-list__layout & {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      left: 0;
+      max-width: 100%;
+  }
+}
+
+.feature-row {
+  @extend .row;
+  @extend .card;
+  @extend .card-body;
+  @extend .flex-row;
+
+  box-shadow: 0 0 14px 0px #c5c5c5;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  padding: 3rem;
+  
+  &.wp-block-columns {
+	  
+	  .wp-block-column {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #c7c8ca;
+      padding-bottom: 1rem;
+      
+		  @include media-breakpoint-up(md) {
+  		  border-right: 1px solid #c7c8ca;
+  		  border-bottom: none;
+  		  margin-bottom: 0;
+  		  padding-bottom: 0;
+		  }
+		  
+		  &:last-of-type {
+			  border: none;
+		  }
+	  }
+  } 
+  .block-feature-item {
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+    
+    .icon {
+      background: linear-gradient( 180deg, #3284c2, #23346e);
+    }
+  }  
+}
+
+.quote-form {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+  margin-bottom: -50px;
+
+	.quote-title {
+		color: var(--primary);
+		font-weight: 700;
+		margin-bottom: 2rem;
+		border-bottom: 1px solid var(--primary);
+		line-height: .1rem;
+		
+		span {
+			background: var(--light);
+			padding: 0 1rem;
+		}
+	}
+}
+
+.single-analyzers {
+  .nav-pills {
+    
+    .nav-link {
+      color: $body-color;
+      background-color: #d1d2d4;
+    }
+  
+    .nav-link.active,
+    .show > .nav-link {
+      color: $nav-pills-link-active-color;
+      background-color: $nav-pills-link-active-bg;
+    }
+  }
+  
+  .fa-check {
+    color: var(--primary);
+    margin-right: .5rem;
+  }
+}
+
+.product-spotlight {
+  
+  .spotlight-image {
+    transform: translateY(-3.875rem);
+  }
+}
+
+.block-products {
+  
+  @include media-breakpoint-up(md) {
+    .analyzer {
+      flex: 1 0 26%;
+    }
+  }
+}

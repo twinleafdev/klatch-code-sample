@@ -1,0 +1,11 @@
+body#tinymce {
+  margin: 12px !important;
+}
+
+.wp-block {
+    &[data-type="acf/block-spotlight"],
+    &[data-type="acf/block-hero"],
+    &[data-type="acf/block-hero-video"] {
+      max-width: 100% !important;
+    }
+}

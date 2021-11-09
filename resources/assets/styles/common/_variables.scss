@@ -1,0 +1,23 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+$theme-colors: (
+  primary: #3283c1,
+  light: #f3f3f4,
+  gray: #58595b
+);
+
+$dark-blue: #152042;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+$font-family-base: 'Oxygen', sans-serif;
+$body-color: #58595b;
+$jumbotron-padding: 1.5rem;
+$nav-pills-border-radius: 0;
+$nav-pills-link-active-color: var(--white);
+$nav-pills-link-active-bg: var(--primary);
+$btn-border-radius: 0;
+$jumbotron-padding: 2.5rem;

@@ -1,0 +1,187 @@
+{{--
+  Title: Waltron Product List
+  Description: Product list
+  Category: formatting
+  Icon: admin-comments
+  Keywords: products
+  Mode: preview
+  Align: full
+  PostTypes: page
+  SupportsAlign: false
+  SupportsMode: false
+  SupportsMultiple: false
+--}}
+
+<?php
+if (isset($_GET['parameter'])) {
+  $tech = $_GET['parameter']; 
+}
+// $model = $_GET['model']; 
+global $wp;
+$actual_link =  home_url( $wp->request )
+
+?>
+
+
+      <?php
+        $args = array(
+            'post_type' => array( 
+              'analyzers', 
+            ),
+            'orderby' => 'models_0_model_number',
+            'order' => 'ASC',
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'active_products',
+                    'field'    => 'slug',
+                    'terms'    => 'active',
+                ),
+            ),
+	
+        );
+        
+        if(isset($tech)) {
+         $args['meta_query'] = array(
+          		'relation'		=> 'OR',
+            		array(
+                	'key'		=> 'analyzer_type_parameter',
+            			'value'	=> $tech,
+            		)
+        	);
+        	?>
+        	 <div class="col-12 text-center"><h2 class="mx-auto mb-5">Currently Viewing: <?=$tech;?> Analyzers</h2></div>
+        	<?php	
+        }
+        
+        $the_query = new WP_Query( $args );
+        $model_numbers = array();
+        // The Loop
+        if ( $the_query->have_posts() ) :
+          while ( $the_query->have_posts() ) : $the_query->the_post();
+            $link = get_the_permalink();
+           
+           
+           // build model selects
+            if( have_rows('models', get_the_ID()) ):
+              // Loop through rows.
+              while( have_rows('models', get_the_ID()) ) : the_row();
+                /*
+                 * todo: change model number to main number not sub number
+                 */
+                  $model_number = get_sub_field('model_number');
+                  if (!in_array($model_number, $model_numbers)) {
+                   $model_selects[$model_number] = '<option value="'.$link.'">'.get_the_title().'</option>';
+                  }
+                  $model_numbers[] = $model_number;
+              endwhile;
+            endif;        
+  
+    
+          endwhile;
+          
+        ksort($model_selects);
+        $model_selects_return = "";
+        foreach($model_selects as $model_no => $select) {
+          $model_selects_return .= $select;
+        } 
+        endif;
+        
+        // Reset Post Data
+        wp_reset_postdata();
+
+        
+        ?>
+
+<div data-{{ $block['id'] }} class=" {{ $block['classes'] }}" >
+ 
+  <div class="container">
+  	<div class="row">
+    	<div class="col-6">
+        <form>
+          <div class="form-group">
+            <label for="parameter-filter">Filter by Parameter used</label>
+            <select onchange="location = this.options[this.selectedIndex].value;" class="form-control" id="#tech-sort">
+              <option disabled selected>Choose One</option>
+              <?php
+                
+                /*
+                 * todo: sync the choices with the acf field
+                 */
+              $parameters = [
+                  "Ammonia",
+                  "Chlorine, free",
+                  "Conductivity, Degas Cation",
+                  "Conductivity, Multicon & pH",
+                  "Copper, dissolved",
+                  "Disinfectants/Monochloramine",
+                  "Ethylene/Propylene Glycol",
+                  "Filming Amines",
+                  "Hardness, Calcium",
+                  "Hardness, total",
+                  "Hydrazine",
+                  "Hydrogen, dissolved",
+                  "Iron, dissolved",
+                  "Oil in Water",
+                  "Oxygen, dissolved (LDO)",
+                  "Phosphate",
+                  "Silica",
+                  "Sodium"
+              ];
+              
+              foreach ($parameters as $option) {
+                echo '<option value="'.$actual_link.'?parameter='.$option.'">'.$option.'</option>';
+              }
+              ?>
+
+            </select>
+          </div>
+        </form>
+    	</div>
+    	<div class="col-6">
+         <form>
+          <div class="form-group">
+            <label for="parameter-filter">Choose a Model number</label>
+            <select onchange="location = this.options[this.selectedIndex].value;" class="form-control" id="#tech-sort">
+              <option disabled selected>Choose One</option>
+              <?=$model_selects_return;?>
+            </select>
+          </div>
+        </form>   		
+    	</div>
+  	</div><!-- .row -->
+  </div><!-- .container -->
+  
+  
+  <div class="container">
+    <div class="row">
+  
+      
+      <?php
+
+        
+        $the_query = new WP_Query( $args );
+        
+        // The Loop
+        if ( $the_query->have_posts() ) :
+          while ( $the_query->have_posts() ) : $the_query->the_post();
+          ?>
+              <div class="col-md-4 mb-5">
+                <?=get_the_post_thumbnail( '', 'thumbnail', array( 'class' => 'img-fluid' ) );?>
+                <p class="entry-title lead"><a href="{{get_permalink()}}">{!! get_the_title() !!}</a></p>
+              <span class="d-none">  {!! App::modelNumbers() !!}</span>
+              </div>
+          <?php
+          endwhile;
+        else:
+          echo "<h1 class='mx-auto my-5 text-danger'>No Analyzers Found</h1>";
+        endif;
+        
+        // Reset Post Data
+        wp_reset_postdata();
+        ?>
+        
+     </div><!-- .row -->
+  </div><!-- .container -->
+
+</div>
